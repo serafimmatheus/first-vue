@@ -32,6 +32,11 @@ const routes = [
     path: '/computed-properties',
     name: 'computedProperties',
     component: () => import(/* webpackChunkName: "about" */ '../views/ComputedProperties.vue')
+  },
+  {
+    path: '/perfil',
+    name: 'perfil',
+    component: () => import(/* webpackChunkName: "about" */ '../views/TheProfile.vue')
   }
 ]
 

@@ -1,10 +1,18 @@
 <template>
-  <header>
+  <header class="header">
     <div class="container">
       <div class="content">
         <div class="avatar">
           <img v-bind:src="src" v-bind:alt="imgAlt" />
-          <h1>Matheus Serafim</h1>
+
+          <div>
+            <h4>
+              {{ $store.state.user.name }}
+            </h4>
+            <p>
+              {{ $store.state.user.email }}
+            </p>
+          </div>
         </div>
 
         <nav>
@@ -18,6 +26,8 @@
           <router-link to="/computed-properties"
             >Computed Properties</router-link
           >
+          |
+          <router-link to="/perfil">Perfil</router-link> |
         </nav>
       </div>
     </div>
@@ -30,14 +40,26 @@
 export default {
   data() {
     return {
-      imgAlt: 'Matheus Serafim',
-      src: 'https://github.com/serafimmatheus.png',
+      imgAlt: this.$store.state.user.name,
+      src: this.$store.state.user.avatar,
     }
   },
 }
 </script>
 
-<style>
+<style scoped>
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  border-bottom: 2px solid #000;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1280px;
