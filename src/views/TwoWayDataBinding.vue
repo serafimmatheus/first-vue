@@ -1,5 +1,7 @@
 <template>
-  <TwoWayDataBinding />
+  <div class="container">
+    <TwoWayDataBinding />
+  </div>
 </template>
 
 <script>
